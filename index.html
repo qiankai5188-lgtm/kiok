@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>灰塔之契 - 触屏简洁版</title>
+  <title>灰塔之契 - 经典音效版</title>
   <style>
     :root {
       --bg: #0d0f15;
@@ -1196,6 +1196,203 @@ body {
 }
 </style>
 
+
+<style>
+/* === Classic Mota-inspired character/NPC art refresh === */
+.cell.asset-P, .target-art.asset-P {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0IiBzaGFwZS1yZW5kZXJpbmc9ImNyaXNwRWRnZXMiPgo8cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiMwMDAwMDAwMCIvPgo8cmVjdCB4PSIyNiIgeT0iOCIgd2lkdGg9IjEyIiBoZWlnaHQ9IjQiIGZpbGw9IiNmN2QxNWQiLz4KPHJlY3QgeD0iMjIiIHk9IjEyIiB3aWR0aD0iMjAiIGhlaWdodD0iNiIgZmlsbD0iI2Y3ZDE1ZCIvPgo8cmVjdCB4PSIyMCIgeT0iMTgiIHdpZHRoPSIyNCIgaGVpZ2h0PSIxNiIgcng9IjIiIGZpbGw9IiNmM2Q4YmUiLz4KPHJlY3QgeD0iMjQiIHk9IjIyIiB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjMmExZjE3Ii8+PHJlY3QgeD0iMzYiIHk9IjIyIiB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjMmExZjE3Ii8+CjxyZWN0IHg9IjI2IiB5PSIyOCIgd2lkdGg9IjEyIiBoZWlnaHQ9IjIiIGZpbGw9IiNjMzdhNzMiLz4KPHJlY3QgeD0iMTgiIHk9IjM0IiB3aWR0aD0iMjgiIGhlaWdodD0iOCIgZmlsbD0iIzNlNzBiOCIvPgo8cmVjdCB4PSIxOCIgeT0iNDIiIHdpZHRoPSIyOCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzI1NTA4ZiIvPgo8cmVjdCB4PSIxOCIgeT0iMzYiIHdpZHRoPSI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjZDliMTRkIi8+PHJlY3QgeD0iNDIiIHk9IjM2IiB3aWR0aD0iNCIgaGVpZ2h0PSIxNiIgZmlsbD0iI2Q5YjE0ZCIvPgo8cmVjdCB4PSIyMiIgeT0iNTIiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiM2YjQ0MjMiLz48cmVjdCB4PSIzNCIgeT0iNTIiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiM2YjQ0MjMiLz4KPHJlY3QgeD0iMTIiIHk9IjM4IiB3aWR0aD0iNCIgaGVpZ2h0PSIxOCIgZmlsbD0iI2IwYjRiZSIvPgo8cmVjdCB4PSIxMCIgeT0iMzYiIHdpZHRoPSI4IiBoZWlnaHQ9IjQiIGZpbGw9IiNkN2RiZTQiLz4KPHJlY3QgeD0iMTIiIHk9IjU2IiB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjN2Y4Nzk2Ii8+CjxyZWN0IHg9IjE4IiB5PSIzNCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjIiIGZpbGw9IiM4MGE4ZGYiIG9wYWNpdHk9Ii41NSIvPgo8L3N2Zz4=") !important;
+}
+.cell.asset-N, .target-art.asset-N {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0IiBzaGFwZS1yZW5kZXJpbmc9ImNyaXNwRWRnZXMiPgo8cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiMwMDAwMDAwMCIvPgo8cmVjdCB4PSIyNCIgeT0iOCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjYiIGZpbGw9IiM4YzhmYTMiLz4KPHJlY3QgeD0iMjAiIHk9IjE0IiB3aWR0aD0iMjQiIGhlaWdodD0iNiIgZmlsbD0iI2Q4ZGNlNyIvPgo8cmVjdCB4PSIyMCIgeT0iMjAiIHdpZHRoPSIyNCIgaGVpZ2h0PSIxNCIgcng9IjIiIGZpbGw9IiNmMGRjYzYiLz4KPHJlY3QgeD0iMjQiIHk9IjI0IiB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjMjYyMTFjIi8+PHJlY3QgeD0iMzYiIHk9IjI0IiB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjMjYyMTFjIi8+CjxyZWN0IHg9IjI2IiB5PSIzMCIgd2lkdGg9IjEyIiBoZWlnaHQ9IjgiIGZpbGw9IiNkOWRjZTYiLz4KPHJlY3QgeD0iMjIiIHk9IjM2IiB3aWR0aD0iMjAiIGhlaWdodD0iOCIgZmlsbD0iI2Q5ZGNlNiIvPgo8cmVjdCB4PSIxOCIgeT0iNDAiIHdpZHRoPSIyOCIgaGVpZ2h0PSIxNiIgZmlsbD0iIzhkNmVhNSIvPgo8cmVjdCB4PSIyMiIgeT0iNTYiIHdpZHRoPSI4IiBoZWlnaHQ9IjQiIGZpbGw9IiM1YzNlMWYiLz48cmVjdCB4PSIzNCIgeT0iNTYiIHdpZHRoPSI4IiBoZWlnaHQ9IjQiIGZpbGw9IiM1YzNlMWYiLz4KPHJlY3QgeD0iMTQiIHk9IjQyIiB3aWR0aD0iNCIgaGVpZ2h0PSIxMiIgZmlsbD0iI2NkYTA2YSIvPjxyZWN0IHg9IjQ2IiB5PSI0MiIgd2lkdGg9IjQiIGhlaWdodD0iMTIiIGZpbGw9IiNjZGEwNmEiLz4KPHJlY3QgeD0iMTQiIHk9IjU0IiB3aWR0aD0iNCIgaGVpZ2h0PSI2IiBmaWxsPSIjN2Y2MTQyIi8+PHJlY3QgeD0iNDYiIHk9IjU0IiB3aWR0aD0iNCIgaGVpZ2h0PSI2IiBmaWxsPSIjN2Y2MTQyIi8+Cjwvc3ZnPg==") !important;
+}
+.cell.asset-u, .target-art.asset-u {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0IiBzaGFwZS1yZW5kZXJpbmc9ImNyaXNwRWRnZXMiPgo8cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiMwMDAwMDAwMCIvPgo8cmVjdCB4PSIyNCIgeT0iOCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjUiIGZpbGw9IiM2ZTQ3MjkiLz4KPHJlY3QgeD0iMjAiIHk9IjEzIiB3aWR0aD0iMjQiIGhlaWdodD0iNyIgZmlsbD0iIzhlNWIzMyIvPgo8cmVjdCB4PSIyMCIgeT0iMjAiIHdpZHRoPSIyNCIgaGVpZ2h0PSIxNCIgcng9IjIiIGZpbGw9IiNmMWRjYzQiLz4KPHJlY3QgeD0iMjQiIHk9IjI0IiB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjMmExZjE3Ii8+PHJlY3QgeD0iMzYiIHk9IjI0IiB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjMmExZjE3Ii8+CjxyZWN0IHg9IjE4IiB5PSIzNCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjgiIGZpbGw9IiNjOTQ2NjMiLz4KPHJlY3QgeD0iMTgiIHk9IjQyIiB3aWR0aD0iMjgiIGhlaWdodD0iMTAiIGZpbGw9IiNiMDJmNGQiLz4KPHJlY3QgeD0iMTYiIHk9IjM2IiB3aWR0aD0iNCIgaGVpZ2h0PSIxMiIgZmlsbD0iI2YxZGNjNCIvPjxyZWN0IHg9IjQ0IiB5PSIzNiIgd2lkdGg9IjQiIGhlaWdodD0iMTIiIGZpbGw9IiNmMWRjYzQiLz4KPHJlY3QgeD0iMjIiIHk9IjUyIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjNzQ0NTIzIi8+PHJlY3QgeD0iMzQiIHk9IjUyIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjNzQ0NTIzIi8+CjxyZWN0IHg9IjE4IiB5PSIxNiIgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iI2ZmNjc4NiIvPjxyZWN0IHg9IjQyIiB5PSIxNiIgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iI2ZmNjc4NiIvPgo8L3N2Zz4=") !important;
+}
+.cell.asset-k, .target-art.asset-k {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0IiBzaGFwZS1yZW5kZXJpbmc9ImNyaXNwRWRnZXMiPgo8cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiMwMDAwMDAwMCIvPgo8cmVjdCB4PSIyNCIgeT0iOCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjYiIGZpbGw9IiNjZmQ1ZGQiLz4KPHJlY3QgeD0iMjAiIHk9IjE0IiB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHJ4PSIyIiBmaWxsPSIjYTVhZmJmIi8+CjxyZWN0IHg9IjI0IiB5PSIxOCIgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iIzFmMjQzMCIvPjxyZWN0IHg9IjM2IiB5PSIxOCIgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iIzFmMjQzMCIvPgo8cmVjdCB4PSIyOCIgeT0iMjQiIHdpZHRoPSI4IiBoZWlnaHQ9IjQiIGZpbGw9IiMxZjI0MzAiLz4KPHJlY3QgeD0iMTgiIHk9IjMwIiB3aWR0aD0iMjgiIGhlaWdodD0iMTIiIGZpbGw9IiM1MDY1OGYiLz4KPHJlY3QgeD0iMjAiIHk9IjQyIiB3aWR0aD0iMjQiIGhlaWdodD0iMTAiIGZpbGw9IiMzZTUxNzgiLz4KPHJlY3QgeD0iMTYiIHk9IjMyIiB3aWR0aD0iNCIgaGVpZ2h0PSIxOCIgZmlsbD0iI2I4YzBjZCIvPjxyZWN0IHg9IjQ0IiB5PSIzMiIgd2lkdGg9IjQiIGhlaWdodD0iMTgiIGZpbGw9IiNiOGMwY2QiLz4KPHJlY3QgeD0iMjIiIHk9IjUyIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjNTU1ZDZlIi8+PHJlY3QgeD0iMzQiIHk9IjUyIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjNTU1ZDZlIi8+CjxyZWN0IHg9IjQ4IiB5PSIxOCIgd2lkdGg9IjQiIGhlaWdodD0iMzQiIGZpbGw9IiNiOGJkYzgiLz4KPHJlY3QgeD0iNDYiIHk9IjE2IiB3aWR0aD0iOCIgaGVpZ2h0PSI2IiBmaWxsPSIjZDlkZGU1Ii8+Cjwvc3ZnPg==") !important;
+}
+.cell.asset-p, .target-art.asset-p {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0IiBzaGFwZS1yZW5kZXJpbmc9ImNyaXNwRWRnZXMiPgo8cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiMwMDAwMDAwMCIvPgo8cmVjdCB4PSIyNCIgeT0iOCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjYiIGZpbGw9IiNkN2RhZTgiIG9wYWNpdHk9Ii45Ii8+CjxyZWN0IHg9IjIwIiB5PSIxNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiByeD0iMiIgZmlsbD0iI2I0YmZkMyIgb3BhY2l0eT0iLjkyIi8+CjxyZWN0IHg9IjI0IiB5PSIxOCIgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iI2VhZjJmZiIvPjxyZWN0IHg9IjM2IiB5PSIxOCIgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iI2VhZjJmZiIvPgo8cmVjdCB4PSIyOCIgeT0iMjQiIHdpZHRoPSI4IiBoZWlnaHQ9IjQiIGZpbGw9IiMyYTMyNDQiLz4KPHJlY3QgeD0iMTgiIHk9IjMwIiB3aWR0aD0iMjgiIGhlaWdodD0iMTIiIGZpbGw9IiM3YzZiYjIiIG9wYWNpdHk9Ii45MiIvPgo8cmVjdCB4PSIyMCIgeT0iNDIiIHdpZHRoPSIyNCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzVkNGY5MSIgb3BhY2l0eT0iLjkyIi8+CjxwYXRoIGQ9Ik0yMCA1Mmg2bDQtNCA0IDQgNC00IDYgNHY4SDIweiIgZmlsbD0iI2NmZDdlZiIgb3BhY2l0eT0iLjkyIi8+CjxyZWN0IHg9IjQ2IiB5PSIxOCIgd2lkdGg9IjQiIGhlaWdodD0iMjYiIGZpbGw9IiNkY2UxZWIiIG9wYWNpdHk9Ii45NSIvPgo8cmVjdCB4PSI0NCIgeT0iMTYiIHdpZHRoPSI4IiBoZWlnaHQ9IjYiIGZpbGw9IiNmMmY1ZmEiIG9wYWNpdHk9Ii45NSIvPgo8L3N2Zz4=") !important;
+}
+/* optional alternate merchant-like NPC look used for generic interactions */
+.npc-merchant-preview {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0IiBzaGFwZS1yZW5kZXJpbmc9ImNyaXNwRWRnZXMiPgo8cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiMwMDAwMDAwMCIvPgo8cmVjdCB4PSIyMiIgeT0iOCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjgiIGZpbGw9IiM2ZjRhMmMiLz4KPHJlY3QgeD0iMjAiIHk9IjE2IiB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHJ4PSIyIiBmaWxsPSIjZjFkY2M0Ii8+CjxyZWN0IHg9IjI0IiB5PSIyMSIgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iIzJhMWYxNyIvPjxyZWN0IHg9IjM2IiB5PSIyMSIgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iIzJhMWYxNyIvPgo8cmVjdCB4PSIxOCIgeT0iMzIiIHdpZHRoPSIyOCIgaGVpZ2h0PSIxMCIgZmlsbD0iI2NiOGMyZSIvPgo8cmVjdCB4PSIxOCIgeT0iNDIiIHdpZHRoPSIyOCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzlhNWMyYyIvPgo8cmVjdCB4PSIxNCIgeT0iMzQiIHdpZHRoPSI0IiBoZWlnaHQ9IjEyIiBmaWxsPSIjZjFkY2M0Ii8+PHJlY3QgeD0iNDYiIHk9IjM0IiB3aWR0aD0iNCIgaGVpZ2h0PSIxMiIgZmlsbD0iI2YxZGNjNCIvPgo8cmVjdCB4PSIyMiIgeT0iNTIiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiM2YjQ0MjMiLz48cmVjdCB4PSIzNCIgeT0iNTIiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiM2YjQ0MjMiLz4KPHJlY3QgeD0iMjYiIHk9IjEwIiB3aWR0aD0iMTIiIGhlaWdodD0iMiIgZmlsbD0iI2ZmZTE4YSIvPgo8L3N2Zz4=");
+}
+.cell.asset-P, .cell.asset-N, .cell.asset-u, .cell.asset-k, .cell.asset-p {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  image-rendering: pixelated;
+}
+.target-art.asset-P, .target-art.asset-N, .target-art.asset-u, .target-art.asset-k, .target-art.asset-p {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  image-rendering: pixelated;
+}
+</style>
+
+
+<style>
+/* === Classic Mota cutscene/dialog presentation === */
+.modal-mask {
+  align-items: flex-end !important;
+  padding: 12px !important;
+  background: rgba(0, 0, 0, .55) !important;
+}
+.classic-dialog-window {
+  width: min(720px, 100%) !important;
+  max-width: 720px !important;
+  border-radius: 4px !important;
+  border: 3px solid #d7c47a !important;
+  background: #10131b !important;
+  box-shadow:
+    0 0 0 2px #2a2211,
+    0 12px 36px rgba(0,0,0,.65),
+    inset 0 0 0 2px #2b303d !important;
+  padding: 10px !important;
+  animation: dialogSlideUp .16s ease-out;
+}
+.dialog-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #3b3f4d;
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+}
+.dialog-topline h2 {
+  margin: 0 !important;
+  color: #ffe18a !important;
+  font-size: 16px !important;
+  letter-spacing: 1px;
+}
+#typeSpeedLabel {
+  color: #9ea6b8;
+  font-size: 12px;
+}
+.dialog-body-wrap {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 10px;
+  align-items: stretch;
+}
+.dialog-portrait {
+  width: 54px;
+  height: 54px;
+  border: 2px solid #5f667a;
+  background: linear-gradient(180deg, #2b303e, #11141c);
+  color: #ffe18a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 900;
+  box-shadow: inset 0 0 0 1px #151923;
+}
+.classic-type-body {
+  min-height: 76px;
+  max-height: 34vh;
+  overflow-y: auto;
+  color: #f0ead5 !important;
+  font-size: 15px !important;
+  line-height: 1.75 !important;
+  letter-spacing: .5px;
+  padding: 2px 4px;
+  white-space: pre-wrap;
+}
+.classic-type-body p {
+  margin: 0 0 6px !important;
+}
+.dialog-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  border-top: 1px solid #3b3f4d;
+  padding-top: 8px;
+}
+#dialogHint {
+  color: #aeb4c5;
+  font-size: 12px;
+}
+.dialog-footer .action-btn {
+  min-width: 76px;
+}
+.screen-flash {
+  pointer-events: none;
+  position: absolute;
+  inset: 3px;
+  opacity: 0;
+  z-index: 5;
+}
+.screen-flash.active {
+  animation: classicFlash .24s ease-out;
+}
+.screen-flash.floor.active {
+  background: rgba(255, 226, 138, .26);
+}
+.screen-flash.battle.active {
+  background: rgba(255, 80, 92, .30);
+}
+.screen-flash.door.active {
+  background: rgba(255, 200, 90, .22);
+}
+.screen-flash.white.active {
+  background: rgba(255,255,255,.25);
+}
+@keyframes classicFlash {
+  0% { opacity: 0; }
+  18% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes dialogSlideUp {
+  from { transform: translateY(18px); opacity: .35; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@media (max-width: 640px) {
+  .modal-mask {
+    padding: 8px !important;
+  }
+  .classic-dialog-window {
+    width: 100% !important;
+    padding: 8px !important;
+  }
+  .dialog-body-wrap {
+    grid-template-columns: 44px 1fr;
+    gap: 8px;
+  }
+  .dialog-portrait {
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+  }
+  .classic-type-body {
+    font-size: 14px !important;
+    min-height: 72px;
+    max-height: 36vh;
+  }
+  #dialogHint {
+    display: none;
+  }
+}
+</style>
+
+
+<style>
+/* === Classic chiptune audio controls === */
+#soundBtn {
+  border-color: #d7c47a !important;
+}
+#soundBtn::before {
+  content: "♪ ";
+  color: #ffe18a;
+  font-weight: 900;
+}
+</style>
+
 </head>
 <body>
   <div class="game-shell">
@@ -1203,7 +1400,7 @@ body {
       <div class="topbar">
         <div>
           <h1>灰塔之契 · 原版操作版</h1>
-          <p class="subtitle">触屏简洁版：一步一格移动，进入相邻格触发开门、拾取和战斗。版本 v1.0.21-classic</p>
+          <p class="subtitle">经典音效版：一步一格移动，进入相邻格触发开门、拾取和战斗。版本 v1.0.21-classic</p>
         </div>
         <div class="floor-badge">
           <b id="floorBadge">1F</b>
@@ -1216,7 +1413,7 @@ body {
       </div>
       <div class="floor-progress"><div id="floorProgressFill" class="floor-progress-fill"></div></div>
       <div class="mobile-hud" id="mobileHud"></div>
-      <div class="map-wrap"><div id="map" class="map" aria-label="魔塔地图"></div><div id="floatingFeed" class="floating-feed" aria-live="polite"></div></div>
+      <div class="map-wrap"><div id="map" class="map" aria-label="魔塔地图"></div><div id="screenFlash" class="screen-flash"></div><div id="floatingFeed" class="floating-feed" aria-live="polite"></div></div>
       <div id="classicMessageLine" class="classic-message-line">信息：准备进入灰塔。</div>
       <div class="legend">
         <span>🧍 玩家</span>
@@ -1255,6 +1452,7 @@ body {
         <button class="action-btn" id="saveBtn">保存</button>
         <button class="action-btn" id="monsterBookBtn">怪物手册</button>
         <button class="action-btn" id="storyLogBtn">剧情日志</button>
+        <button class="action-btn" id="soundBtn">声音：关</button>
         <button class="action-btn" id="settingsBtn">设置</button>
 
         <button class="action-btn utility-hidden" id="loadBtn">读取</button>
@@ -1270,23 +1468,32 @@ body {
       <div class="save-status" id="saveStatus">存档状态：未保存</div>
 
       <div class="hint-box">
-        触屏简洁版：一步一格移动，撞格触发开门、拾取、战斗和楼梯切换；点击远处只查看信息。
+        经典音效版：一步一格移动，撞格触发开门、拾取、战斗和楼梯切换；点击远处只查看信息。
       </div>
     </aside>
   </div>
 
   <div class="modal-mask" id="modalMask">
-    <div class="modal">
-      <h2 id="modalTitle">提示</h2>
-      <div id="modalBody"></div>
-      <button class="action-btn" id="modalClose">确定</button>
+    <div class="modal classic-dialog-window">
+      <div class="dialog-topline">
+        <h2 id="modalTitle">提示</h2>
+        <span id="typeSpeedLabel">速度：普通</span>
+      </div>
+      <div class="dialog-body-wrap">
+        <div class="dialog-portrait" id="dialogPortrait">塔</div>
+        <div id="modalBody" class="classic-type-body"></div>
+      </div>
+      <div class="dialog-footer">
+        <span id="dialogHint">点击文字窗口可加速，再次点击可直接显示全文</span>
+        <button class="action-btn" id="modalClose">继续</button>
+      </div>
     </div>
   </div>
 
   <script>
-    const SAVE_KEY = 'gray_tower_touch_no_intro_save_v1';
-    const CHECKPOINT_KEY = 'gray_tower_touch_no_intro_checkpoint_v1';
-    const GAME_VERSION = 'v1.0.26-touch-no-intro';
+    const SAVE_KEY = 'gray_tower_classic_audio_save_v1';
+    const CHECKPOINT_KEY = 'gray_tower_classic_audio_checkpoint_v1';
+    const GAME_VERSION = 'v1.0.29-classic-audio';
     let suppressNextAutoSave = false;
 
     const TILE = {
@@ -1802,6 +2009,9 @@ body {
             addLog('目标信息和操作反馈会在地图右上角滚动显示并自动消失。', 'info');
             addLog('手机布局已启用：顶部状态栏、地图放大、底部核心按钮。', 'info');
       addLog('原版魔塔交互已启用：一步一格、撞格触发、弹窗锁定移动、危险战斗确认默认关闭。', 'info');
+      addLog('原创复古 BGM 与音效系统已加入，可点“声音”开启。', 'info');
+      addLog('经典演出已启用：剧情窗口逐字滚动，点击可加速或跳过。', 'info');
+      addLog('人物与 NPC 美术已切换为经典魔塔风格：主角、老人、孤儿、骑士与幻影已重绘。', 'info');
       addLog('地图设计已切换为原版魔塔风格：房间、走廊、门钥匙与守卫点组合。', 'info');
       addLog('信息显示已切换为原版魔塔风格：状态、目标、信息栏固定显示。', 'info');
       addLog('交互规则：点击远处只查看，点击相邻格才移动。', 'info');
@@ -2304,7 +2514,8 @@ body {
         game.player.atk += 3;
         game.player.collectedItems += 1;
         floor.map[ny][nx] = TILE.FLOOR;
-        addLog('获得攻击宝石，攻击 +3。', 'good');
+        playSfx('pickup');
+      addLog('获得攻击宝石，攻击 +3。', 'good');
         movePlayer(nx, ny);
         return;
       }
@@ -2313,7 +2524,8 @@ body {
         game.player.def += 3;
         game.player.collectedItems += 1;
         floor.map[ny][nx] = TILE.FLOOR;
-        addLog('获得防御宝石，防御 +3。', 'good');
+        playSfx('pickup');
+      addLog('获得防御宝石，防御 +3。', 'good');
         movePlayer(nx, ny);
         return;
       }
@@ -2782,6 +2994,7 @@ body {
           return;
         }
         game.player.holyWater -= 1;
+        playSfx('choice');
         game.player.babyChoice = '净化';
         game.player.soulLamp = true;
         floor.map[y][x] = TILE.FLOOR;
@@ -2791,6 +3004,7 @@ body {
         movePlayer(x, y);
         showModal('引魂灯', '<p>哭声停止了。</p><p>灰婴没有消失，而是化作一盏微弱的引魂灯。</p><p>它不会让过去变好，但会让你看清后面的路。</p>');
       } else {
+        playSfx('choice');
         game.player.babyChoice = '击杀';
         game.player.ashKey = true;
         game.player.sin = (game.player.sin || 0) + 2;
@@ -3061,6 +3275,9 @@ body {
       add('原版信息显示', !!document.getElementById('classicMessageLine') && !!document.getElementById('targetInfo') && !!document.getElementById('log'), '状态、目标信息和固定信息栏已加载');
       add('原版地图设计', GAME_VERSION.includes('touch-controls') || GAME_VERSION.includes('classic-map'), '20 层地图已重做为房间/走廊/门钥匙/守卫点结构');
       add('触屏输入', !!document.getElementById('map') && typeof initTouchMapControls === 'function', '触屏输入模块已加载');
+      add('人物与NPC美术', GAME_VERSION.includes('cutscene') || GAME_VERSION.includes('npc-art'), '主角、NPC 与人形角色素材已替换为经典风格');
+      add('经典演出窗口', typeof advanceDialogText === 'function' && !!document.querySelector('.classic-dialog-window'), '逐字滚动、点击加速和底部文字窗口已加载');
+      add('复古音频系统', typeof toggleAudio === 'function' && typeof playSfx === 'function', 'BGM 与音效模块已加载');
       let storageOk = false;
       try {
         localStorage.setItem('__gray_tower_test__', '1');
@@ -3227,20 +3444,328 @@ body {
       return '';
     }
 
-    function showModal(title, html) {
-      document.getElementById('modalTitle').textContent = title;
-      const portrait = getModalPortrait(title);
-      document.getElementById('modalBody').innerHTML = `${portrait ? `<div class="modal-art modal-art-${portrait}"></div>` : ''}${html}`;
-      document.getElementById('modalMask').style.display = 'flex';
+
+    const AUDIO = {
+      ctx: null,
+      master: null,
+      musicGain: null,
+      sfxGain: null,
+      enabled: false,
+      bgmOn: false,
+      bgmTimer: null,
+      step: 0,
+      tempo: 150
+    };
+
+    const BGM_NOTES = [
+      220, 0, 261.63, 0, 329.63, 0, 293.66, 0,
+      246.94, 0, 293.66, 0, 349.23, 0, 329.63, 0,
+      196, 0, 246.94, 0, 293.66, 0, 261.63, 0,
+      174.61, 0, 220, 0, 261.63, 0, 246.94, 0
+    ];
+
+    const BGM_BASS = [
+      110, 0, 110, 0, 98, 0, 98, 0,
+      87.31, 0, 87.31, 0, 98, 0, 98, 0
+    ];
+
+    function initAudio() {
+      if (AUDIO.ctx) return true;
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContext) {
+        addLog('当前浏览器不支持 WebAudio。', 'bad');
+        return false;
+      }
+
+      AUDIO.ctx = new AudioContext();
+      AUDIO.master = AUDIO.ctx.createGain();
+      AUDIO.musicGain = AUDIO.ctx.createGain();
+      AUDIO.sfxGain = AUDIO.ctx.createGain();
+
+      AUDIO.master.gain.value = 0.55;
+      AUDIO.musicGain.gain.value = 0.12;
+      AUDIO.sfxGain.gain.value = 0.25;
+
+      AUDIO.musicGain.connect(AUDIO.master);
+      AUDIO.sfxGain.connect(AUDIO.master);
+      AUDIO.master.connect(AUDIO.ctx.destination);
+      return true;
+    }
+
+    function resumeAudio() {
+      if (!initAudio()) return false;
+      if (AUDIO.ctx.state === 'suspended') AUDIO.ctx.resume();
+      return true;
+    }
+
+    function updateSoundButton() {
+      const btn = document.getElementById('soundBtn');
+      if (btn) btn.textContent = AUDIO.enabled ? '声音：开' : '声音：关';
+      const sBtn = document.getElementById('settingsSoundBtn');
+      if (sBtn) sBtn.textContent = AUDIO.enabled ? '关闭声音' : '开启声音';
+      const bBtn = document.getElementById('settingsBgmBtn');
+      if (bBtn) bBtn.textContent = AUDIO.bgmOn ? '关闭 BGM' : '开启 BGM';
+    }
+
+    function toggleAudio() {
+      if (!AUDIO.enabled) {
+        if (!resumeAudio()) return;
+        AUDIO.enabled = true;
+        AUDIO.bgmOn = true;
+        startBgm();
+        playSfx('confirm');
+        addLog('声音已开启。', 'good');
+      } else {
+        AUDIO.enabled = false;
+        AUDIO.bgmOn = false;
+        stopBgm();
+        addLog('声音已关闭。', 'info');
+      }
+      updateSoundButton();
+      saveAudioPrefs();
+    }
+
+    function toggleBgm() {
+      if (!resumeAudio()) return;
+      AUDIO.enabled = true;
+      AUDIO.bgmOn = !AUDIO.bgmOn;
+      if (AUDIO.bgmOn) {
+        startBgm();
+        addLog('BGM 已开启。', 'good');
+      } else {
+        stopBgm();
+        addLog('BGM 已关闭。', 'info');
+      }
+      updateSoundButton();
+      saveAudioPrefs();
+    }
+
+    function saveAudioPrefs() {
+      localStorage.setItem('gray_tower_audio_prefs', JSON.stringify({
+        enabled: AUDIO.enabled,
+        bgmOn: AUDIO.bgmOn
+      }));
+    }
+
+    function loadAudioPrefs() {
+      try {
+        const prefs = JSON.parse(localStorage.getItem('gray_tower_audio_prefs') || '{}');
+        AUDIO.enabled = !!prefs.enabled;
+        AUDIO.bgmOn = !!prefs.bgmOn;
+        updateSoundButton();
+      } catch {
+        updateSoundButton();
+      }
+    }
+
+    function playTone(freq, dur = 0.08, type = 'square', volume = 0.2, delay = 0, target = 'sfx') {
+      if (!AUDIO.enabled && target !== 'music') return;
+      if (!AUDIO.ctx) return;
+      if (!freq) return;
+
+      const t = AUDIO.ctx.currentTime + delay;
+      const osc = AUDIO.ctx.createOscillator();
+      const gain = AUDIO.ctx.createGain();
+
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, t);
+      gain.gain.setValueAtTime(0.0001, t);
+      gain.gain.exponentialRampToValueAtTime(Math.max(0.0002, volume), t + 0.01);
+      gain.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+
+      osc.connect(gain);
+      gain.connect(target === 'music' ? AUDIO.musicGain : AUDIO.sfxGain);
+      osc.start(t);
+      osc.stop(t + dur + 0.03);
+    }
+
+    function playNoise(dur = 0.12, volume = 0.18, delay = 0) {
+      if (!AUDIO.enabled || !AUDIO.ctx) return;
+      const sr = AUDIO.ctx.sampleRate;
+      const buffer = AUDIO.ctx.createBuffer(1, Math.floor(sr * dur), sr);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < data.length; i++) {
+        data[i] = (Math.random() * 2 - 1) * (1 - i / data.length);
+      }
+      const source = AUDIO.ctx.createBufferSource();
+      const gain = AUDIO.ctx.createGain();
+      gain.gain.value = volume;
+      source.buffer = buffer;
+      source.connect(gain);
+      gain.connect(AUDIO.sfxGain);
+      source.start(AUDIO.ctx.currentTime + delay);
+    }
+
+    function playSfx(name) {
+      if (!AUDIO.enabled) return;
+      resumeAudio();
+
+      if (name === 'pickup') {
+        playTone(659.25, .055, 'square', .20, 0);
+        playTone(880, .07, 'square', .18, .055);
+      } else if (name === 'door') {
+        playTone(196, .08, 'triangle', .22, 0);
+        playTone(246.94, .08, 'triangle', .18, .07);
+        playTone(329.63, .10, 'triangle', .16, .14);
+      } else if (name === 'battle') {
+        playNoise(.10, .18, 0);
+        playTone(146.83, .08, 'sawtooth', .20, 0);
+        playTone(98, .08, 'square', .14, .09);
+      } else if (name === 'stairs') {
+        playTone(261.63, .06, 'square', .18, 0);
+        playTone(329.63, .06, 'square', .16, .06);
+        playTone(392, .08, 'square', .14, .12);
+      } else if (name === 'error') {
+        playTone(196, .09, 'square', .20, 0);
+        playTone(146.83, .12, 'square', .17, .09);
+      } else if (name === 'confirm') {
+        playTone(523.25, .055, 'square', .14, 0);
+        playTone(659.25, .055, 'square', .12, .06);
+      } else if (name === 'choice') {
+        playTone(220, .18, 'triangle', .18, 0);
+        playTone(261.63, .18, 'triangle', .12, .02);
+        playTone(329.63, .18, 'triangle', .10, .04);
+      } else if (name === 'text') {
+        playTone(880, .018, 'square', .035, 0);
+      } else if (name === 'boss') {
+        playTone(82.41, .28, 'sawtooth', .22, 0);
+        playTone(110, .28, 'sawtooth', .12, .03);
+        playNoise(.20, .11, .02);
+      }
+    }
+
+    function startBgm() {
+      if (!AUDIO.enabled || !AUDIO.bgmOn || !AUDIO.ctx) return;
+      stopBgm();
+      AUDIO.step = AUDIO.step || 0;
+      AUDIO.bgmTimer = setInterval(() => {
+        if (!AUDIO.enabled || !AUDIO.bgmOn) return;
+        const note = BGM_NOTES[AUDIO.step % BGM_NOTES.length];
+        const bass = BGM_BASS[AUDIO.step % BGM_BASS.length];
+
+        if (note) playTone(note, .11, 'square', .10, 0, 'music');
+        if (AUDIO.step % 4 === 0 && bass) playTone(bass, .22, 'triangle', .10, 0, 'music');
+        if (AUDIO.step % 8 === 4) playTone(523.25, .04, 'square', .035, .03, 'music');
+
+        AUDIO.step += 1;
+      }, AUDIO.tempo);
+    }
+
+    function stopBgm() {
+      if (AUDIO.bgmTimer) clearInterval(AUDIO.bgmTimer);
+      AUDIO.bgmTimer = null;
+    }
+
+
+    let typewriterState = {
+      timer: null,
+      fullHTML: '',
+      plainText: '',
+      index: 0,
+      speed: 22,
+      completed: true
+    };
+
+    function stripHTML(html) {
+      const temp = document.createElement('div');
+      temp.innerHTML = html;
+      return temp.textContent || temp.innerText || '';
+    }
+
+    function inferPortrait(title = '') {
+      if (/灰婴|孩子|孤儿|米娅/.test(title)) return '童';
+      if (/罗维克|骑士|守卫|审判|Boss|失父/.test(title)) return '骑';
+      if (/伊莲|日记/.test(title)) return '记';
+      if (/三姥|骨姥|血姥|梦姥|契约/.test(title)) return '姥';
+      if (/商人|残魂|NPC|老人/.test(title)) return '老';
+      return '塔';
+    }
+
+    function showModal(title, html, options = {}) {
+      const modalTitle = document.getElementById('modalTitle');
+      const modalBody = document.getElementById('modalBody');
+      const mask = document.getElementById('modalMask');
+      const portraitBox = document.getElementById('dialogPortrait');
+      const speedLabel = document.getElementById('typeSpeedLabel');
+
+      if (typewriterState.timer) clearInterval(typewriterState.timer);
+
+      const oldPortrait = typeof getModalPortrait === 'function' ? getModalPortrait(title) : '';
+      const fullHTML = `${oldPortrait ? `<div class="modal-art modal-art-${oldPortrait}"></div>` : ''}${html}`;
+      const isUtilityWindow = title === '设置' || /settings-grid|settings-group|action-btn|monster-card|balance-report|final-check/.test(html);
+
+      modalTitle.textContent = title;
+      if (portraitBox) portraitBox.textContent = options.portrait || inferPortrait(title);
+      if (speedLabel) speedLabel.textContent = isUtilityWindow ? '速度：即时' : '速度：普通';
+
+      typewriterState.fullHTML = fullHTML;
+      typewriterState.plainText = stripHTML(fullHTML).replace(/\n\s+/g, '\n').trim();
+      typewriterState.index = 0;
+      typewriterState.speed = options.speed || 22;
+      typewriterState.completed = isUtilityWindow;
+
+      mask.style.display = 'flex';
+
+      if (isUtilityWindow || options.instant) {
+        modalBody.innerHTML = fullHTML;
+        return;
+      }
+
+      modalBody.textContent = '';
+      typewriterState.timer = setInterval(() => {
+        typewriterState.index += 1;
+        modalBody.textContent = typewriterState.plainText.slice(0, typewriterState.index);
+        if (typewriterState.index >= typewriterState.plainText.length) finishTypewriter();
+      }, typewriterState.speed);
+    }
+
+    function finishTypewriter() {
+      const modalBody = document.getElementById('modalBody');
+      if (typewriterState.timer) clearInterval(typewriterState.timer);
+      typewriterState.timer = null;
+      typewriterState.completed = true;
+      modalBody.innerHTML = typewriterState.fullHTML;
+    }
+
+    function advanceDialogText() {
+      if (!isModalOpen()) return;
+      if (!typewriterState.completed && typewriterState.speed > 8) {
+        typewriterState.speed = 8;
+        if (typewriterState.timer) clearInterval(typewriterState.timer);
+        typewriterState.timer = setInterval(() => {
+          typewriterState.index += 2;
+          document.getElementById('modalBody').textContent = typewriterState.plainText.slice(0, typewriterState.index);
+          if (typewriterState.index % 4 === 0) playSfx('text');
+          if (typewriterState.index >= typewriterState.plainText.length) finishTypewriter();
+        }, typewriterState.speed);
+        const speedLabel = document.getElementById('typeSpeedLabel');
+        if (speedLabel) speedLabel.textContent = '速度：快';
+        return;
+      }
+      if (!typewriterState.completed) {
+        finishTypewriter();
+        return;
+      }
+      hideModal();
     }
 
     function hideModal() {
+      if (typewriterState.timer) clearInterval(typewriterState.timer);
+      typewriterState.timer = null;
+      typewriterState.completed = true;
       document.getElementById('modalMask').style.display = 'none';
     }
 
     function isModalOpen() {
       const modal = document.getElementById('modalMask');
       return modal && modal.style.display === 'flex';
+    }
+
+    function playFlash(type = 'white') {
+      const flash = document.getElementById('screenFlash');
+      if (!flash) return;
+      flash.className = `screen-flash ${type} active`;
+      setTimeout(() => { flash.className = 'screen-flash'; }, 260);
     }
 
     function escapeHTML(str) {
@@ -3254,6 +3779,13 @@ body {
       const confirmOn = !game.settings || game.settings.dangerConfirm;
       showModal('设置', `
         <p>低频功能已集中到这里，主界面只保留高频操作，减少游戏时的视觉干扰。</p>
+        <div class="settings-group">
+          <div class="settings-group-title">声音</div>
+          <div class="settings-grid">
+            <button class="action-btn" id="settingsSoundBtn">声音开关</button>
+            <button class="action-btn" id="settingsBgmBtn">BGM 开关</button>
+          </div>
+        </div>
         <div class="settings-group">
           <div class="settings-group-title">存档与检查点</div>
           <div class="settings-grid">
@@ -3312,7 +3844,8 @@ body {
     document.addEventListener('keydown', (e) => {
       const key = e.key.toLowerCase();
       if (isModalOpen()) {
-        if (key === 'enter' || key === 'escape' || key === ' ') hideModal();
+        if (key === 'enter' || key === ' ') advanceDialogText();
+        if (key === 'escape') hideModal();
         return;
       }
       if (key === 'arrowup' || key === 'w') tryMove(0, -1);
