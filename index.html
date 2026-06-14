@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>灰塔之契 - 单屏小图标版</title>
+  <title>灰塔之契 - 手机布局优化版</title>
   <style>
     :root {
       --bg: #0d0f15;
@@ -489,186 +489,6 @@
 
 
 
-
-
-
-
-    /* === Single-screen compact icon layout === */
-    html, body {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-    body {
-      min-height: 100svh;
-      height: 100svh;
-      padding: 6px;
-      align-items: stretch;
-    }
-    .game-shell {
-      width: min(980px, 100%);
-      height: calc(100svh - 12px);
-      max-height: calc(100svh - 12px);
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: minmax(0, 1fr) auto;
-      gap: 6px;
-      margin: 0 auto;
-    }
-    .map-panel {
-      min-height: 0;
-      display: flex;
-      flex-direction: column;
-      padding: 6px;
-      border-radius: 14px;
-    }
-    .side-panel {
-      padding: 6px;
-      border-radius: 14px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      gap: 6px;
-      min-height: 54px;
-    }
-    .topbar {
-      margin-bottom: 4px;
-      align-items: center;
-    }
-    h1 {
-      font-size: clamp(14px, 4vw, 18px);
-      line-height: 1.1;
-      margin: 0;
-    }
-    .subtitle { display: none; }
-    .floor-badge {
-      min-width: 54px;
-      border-radius: 10px;
-      padding: 5px 6px;
-    }
-    .floor-badge b { font-size: 16px; }
-    .floor-badge span { display: none; }
-    .floor-header {
-      padding: 5px 8px;
-      margin-bottom: 5px;
-      border-radius: 10px;
-      font-size: 12px;
-    }
-    .floor-progress {
-      height: 5px;
-      margin: -1px 0 6px;
-    }
-    .map-wrap {
-      flex: 1;
-      min-height: 0;
-      width: min(100%, calc(100svh - 146px));
-      max-width: 100%;
-      max-height: 100%;
-      aspect-ratio: 1 / 1;
-      margin: 0 auto;
-    }
-    .map {
-      gap: 2px;
-      padding: 4px;
-      border-radius: 12px;
-    }
-    .cell {
-      border-radius: 6px;
-      font-size: clamp(10px, 2.5vw, 18px);
-    }
-    .legend,
-    .side-panel .section-title,
-    .side-panel .touch-help,
-    .side-panel .hint-box {
-      display: none !important;
-    }
-    .actions.primary-actions {
-      display: flex;
-      grid-template-columns: unset;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      flex: 1 0 auto;
-      margin: 0;
-    }
-    .primary-actions > .action-btn:not(.utility-hidden) {
-      width: 42px;
-      height: 42px;
-      min-width: 42px;
-      padding: 0;
-      border-radius: 13px;
-      font-size: 0;
-      line-height: 0;
-    }
-    .primary-actions > .action-btn:not(.utility-hidden)::before {
-      width: 24px;
-      height: 24px;
-      flex: 0 0 24px;
-    }
-    .save-status {
-      max-width: 38%;
-      min-width: 96px;
-      padding: 6px 8px;
-      font-size: 10px;
-      line-height: 1.2;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .modal {
-      max-height: calc(100svh - 24px);
-    }
-    @media (min-width: 900px) {
-      .map-wrap { width: min(100%, calc(100svh - 148px)); }
-      .side-panel { max-width: min(980px, 100%); }
-    }
-    @media (max-height: 680px) {
-      body { padding: 4px; }
-      .game-shell { height: calc(100svh - 8px); max-height: calc(100svh - 8px); gap: 4px; }
-      .map-panel { padding: 5px; }
-      .floor-header { display: none; }
-      .floor-progress { margin: 2px 0 5px; }
-      .map-wrap { width: min(100%, calc(100svh - 112px)); }
-      .side-panel { min-height: 48px; padding: 5px; }
-      .primary-actions > .action-btn:not(.utility-hidden) { width: 38px; height: 38px; min-width: 38px; }
-      .primary-actions > .action-btn:not(.utility-hidden)::before { width: 22px; height: 22px; flex-basis: 22px; }
-      .save-status { display: none; }
-    }
-
-    /* === Map resident player HUD === */
-    .stats-overlay {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      width: min(260px, 43%);
-      background: rgba(13, 15, 22, .86);
-      border: 1px solid rgba(255,255,255,.13);
-      border-left: 3px solid rgba(215,179,90,.78);
-      border-radius: 14px;
-      padding: 9px 10px;
-      z-index: 6;
-      pointer-events: none;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 12px 28px rgba(0,0,0,.34);
-    }
-    .hud-title { display: flex; justify-content: space-between; align-items: center; gap: 8px; color: #fff3bc; font-size: 12px; font-weight: 900; margin-bottom: 6px; white-space: nowrap; }
-    .hud-title span:last-child { color: #a8adbd; font-size: 11px; font-weight: 700; }
-    .hud-hp-row { display: flex; justify-content: space-between; font-size: 11px; color: #e8ebf5; margin-bottom: 4px; }
-    .hud-hpbar { height: 6px; background: rgba(255,255,255,.08); border-radius: 999px; overflow: hidden; margin-bottom: 7px; }
-    .hud-hpbar-fill { height: 100%; background: linear-gradient(90deg, #cf5565, #f09aa6); border-radius: inherit; transition: width .18s ease; }
-    .hud-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; font-size: 11px; }
-    .hud-grid div { background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.06); border-radius: 7px; padding: 4px 5px; color: #dce1ef; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .hud-grid b { color: #fff; font-weight: 900; }
-    @media (max-width: 520px) {
-      .stats-overlay { top: 8px; left: 8px; width: 43%; padding: 7px 8px; border-radius: 12px; }
-      .hud-title { font-size: 11px; margin-bottom: 5px; }
-      .hud-title span:last-child { display: none; }
-      .hud-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); font-size: 10px; gap: 3px; }
-      .hud-grid div { padding: 3px 4px; }
-      .hud-hp-row { font-size: 10px; }
-    }
-
     /* === Floating target/log feed on map === */
     .map-wrap {
       position: relative;
@@ -715,13 +535,6 @@
     .float-msg.battle { border-left-color: #ff9dab; }
     .float-msg.target { border-left-color: #78d8f0; }
     .float-msg.info { border-left-color: #a8c7ff; }
-
-    .float-msg.guide {
-      border-left-color: #fff3bc;
-      background: rgba(25, 22, 16, .9);
-    }
-    .float-msg.guide b { color: #ffe18a; }
-
     .float-msg.leaving { opacity: 0; transform: translateX(18px); }
     .side-hidden { display: none !important; }
     @keyframes floatIn {
@@ -813,6 +626,170 @@
       .log { min-height: 112px; max-height: 150px; }
       .controls { grid-template-columns: repeat(3, 62px); grid-template-rows: repeat(3, 46px); }
     }
+
+
+    /* === Mobile-first layout optimization === */
+    .mobile-hud {
+      display: none;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+      margin: 6px 0 8px;
+    }
+    .mobile-chip {
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 6px 4px;
+      text-align: center;
+      font-size: 11px;
+      color: var(--muted);
+      min-width: 0;
+    }
+    .mobile-chip b {
+      display: block;
+      margin-top: 2px;
+      color: #fff;
+      font-size: 13px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .mobile-chip.hp b { color: #ff9dab; }
+    .mobile-chip.key b { color: #ffe18a; }
+    .mobile-chip.floor b { color: #fff3bc; }
+
+    @media (max-width: 900px) {
+      html, body {
+        height: 100%;
+        height: 100dvh;
+        overflow: hidden;
+      }
+      body {
+        padding: 0;
+        align-items: stretch;
+      }
+      .game-shell {
+        width: 100%;
+        height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .map-panel {
+        flex: 1 1 auto;
+        min-height: 0;
+        border-radius: 0;
+        border-left: 0;
+        border-right: 0;
+        border-top: 0;
+        padding: 8px 8px 6px;
+        display: flex;
+        flex-direction: column;
+      }
+      .map-panel::before { display: none; }
+      .topbar {
+        align-items: center;
+        margin-bottom: 6px;
+      }
+      h1 { font-size: 17px; line-height: 1.15; }
+      .subtitle { display: none; }
+      .floor-badge {
+        min-width: 58px;
+        padding: 5px 6px;
+        border-radius: 10px;
+      }
+      .floor-badge b { font-size: 16px; }
+      .floor-badge span { display: none; }
+      .floor-header {
+        padding: 6px 8px;
+        margin-bottom: 6px;
+        font-size: 12px;
+      }
+      .floor-progress { height: 6px; margin: 0 0 5px; }
+      .mobile-hud { display: grid; }
+      .map-wrap {
+        width: min(96vw, calc(100dvh - 210px));
+        max-width: 96vw;
+        margin: 2px auto 0;
+        flex: 0 0 auto;
+      }
+      .map {
+        gap: 3px;
+        padding: 5px;
+        border-radius: 12px;
+      }
+      .cell {
+        border-radius: 7px;
+      }
+      .legend { display: none; }
+      .floating-feed {
+        top: 7px;
+        right: 7px;
+        width: min(250px, 68%);
+        max-height: 56%;
+      }
+      .side-panel {
+        flex: 0 0 auto;
+        max-height: 34dvh;
+        overflow: auto;
+        border-radius: 18px 18px 0 0;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 0;
+        padding: 9px 10px calc(9px + env(safe-area-inset-bottom));
+        gap: 8px;
+        box-shadow: 0 -12px 36px rgba(0,0,0,.42);
+      }
+      .side-panel > div:first-child,
+      .touch-section,
+      .save-status,
+      .hint-box {
+        display: none !important;
+      }
+      .primary-actions {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 7px;
+        order: -1;
+      }
+      .action-btn {
+        min-height: 42px;
+        padding: 8px 5px;
+        font-size: 12px;
+        border-radius: 12px;
+      }
+      .action-btn::before {
+        width: 16px;
+        height: 16px;
+        flex-basis: 16px;
+      }
+      .modal-mask {
+        align-items: flex-end;
+        padding: 0;
+      }
+      .modal {
+        width: 100%;
+        max-height: 82dvh;
+        border-radius: 18px 18px 0 0;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 0;
+        padding: 16px 14px calc(16px + env(safe-area-inset-bottom));
+      }
+      .settings-grid { grid-template-columns: repeat(2, 1fr); }
+      .book-table { font-size: 12px; }
+      .book-table th, .book-table td { padding: 5px; }
+    }
+
+    @media (max-width: 420px) {
+      .mobile-hud { grid-template-columns: repeat(5, 1fr); gap: 4px; }
+      .mobile-chip { padding: 5px 2px; font-size: 10px; }
+      .mobile-chip b { font-size: 12px; }
+      .map-wrap { width: min(97vw, calc(100dvh - 205px)); }
+      .primary-actions { gap: 6px; }
+      .action-btn { font-size: 11px; }
+      .settings-grid { grid-template-columns: 1fr; }
+    }
+
   </style>
 </head>
 <body>
@@ -820,8 +797,8 @@
     <section class="panel map-panel">
       <div class="topbar">
         <div>
-          <h1>灰塔之契 · 单屏小图标版</h1>
-          <p class="subtitle">单屏小图标版：地图占主屏，底部小图标按钮，适合触摸屏一屏游玩。版本 v1.0.21-single</p>
+          <h1>灰塔之契 · 手机布局版</h1>
+          <p class="subtitle">手机布局优化版：地图放大、顶部状态栏、底部核心操作，更适合触摸屏游玩。版本 v1.0.20-mobile</p>
         </div>
         <div class="floor-badge">
           <b id="floorBadge">1F</b>
@@ -833,7 +810,8 @@
         <span id="floorDesc">灰塔门厅</span>
       </div>
       <div class="floor-progress"><div id="floorProgressFill" class="floor-progress-fill"></div></div>
-      <div class="map-wrap"><div id="map" class="map" aria-label="魔塔地图"></div><div id="statsOverlay" class="stats-overlay" aria-live="polite"></div><div id="floatingFeed" class="floating-feed" aria-live="polite"></div></div>
+      <div class="mobile-hud" id="mobileHud"></div>
+      <div class="map-wrap"><div id="map" class="map" aria-label="魔塔地图"></div><div id="floatingFeed" class="floating-feed" aria-live="polite"></div></div>
       <div class="legend">
         <span>🧍 玩家</span>
         <span>🧱 墙</span>
@@ -849,14 +827,18 @@
     </section>
 
     <aside class="panel side-panel">
-      <div class="side-hidden" aria-hidden="true">
+      <div>
+        <div class="section-title">玩家属性 <small>实时刷新</small></div>
         <div id="hpCard"></div>
-        <div id="stats"></div>
+        <div class="stats" id="stats"></div>
+      </div>
+
+      <div class="side-hidden" aria-hidden="true">
         <div id="targetInfo"></div>
         <div id="log"></div>
       </div>
 
-      <div>
+      <div class="touch-section">
         <div class="section-title">触摸操作 <small>点击地图自动移动</small></div>
         <div class="touch-help">
           <b>移动方式：</b>点击地图上的任意可达格子，角色会自动寻路移动过去。<br>
@@ -865,10 +847,10 @@
       </div>
 
       <div class="actions primary-actions">
-        <button class="action-btn" id="saveBtn" title="保存" aria-label="保存">保存</button>
-        <button class="action-btn" id="monsterBookBtn" title="怪物手册" aria-label="怪物手册">怪物手册</button>
-        <button class="action-btn" id="storyLogBtn" title="剧情日志" aria-label="剧情日志">剧情日志</button>
-        <button class="action-btn" id="settingsBtn" title="设置" aria-label="设置">设置</button>
+        <button class="action-btn" id="saveBtn">保存</button>
+        <button class="action-btn" id="monsterBookBtn">怪物手册</button>
+        <button class="action-btn" id="storyLogBtn">剧情日志</button>
+        <button class="action-btn" id="settingsBtn">设置</button>
 
         <button class="action-btn utility-hidden" id="loadBtn">读取</button>
         <button class="action-btn utility-hidden" id="clearSaveBtn">清除存档</button>
@@ -883,7 +865,7 @@
       <div class="save-status" id="saveStatus">存档状态：未保存</div>
 
       <div class="hint-box">
-        单屏小图标版：地图占据主屏，底部只保留小图标按钮。
+        手机布局版：地图放大居中，顶部显示核心状态，底部保留高频按钮，适合触屏自动寻路。
       </div>
     </aside>
   </div>
@@ -897,9 +879,9 @@
   </div>
 
   <script>
-    const SAVE_KEY = 'gray_tower_single_save_v1';
-    const CHECKPOINT_KEY = 'gray_tower_single_checkpoint_v1';
-    const GAME_VERSION = 'v1.0.21-single-screen-icons';
+    const SAVE_KEY = 'gray_tower_mobile_save_v1';
+    const CHECKPOINT_KEY = 'gray_tower_mobile_checkpoint_v1';
+    const GAME_VERSION = 'v1.0.20-mobile-layout';
     let suppressNextAutoSave = false;
 
     const TILE = {
@@ -964,8 +946,17 @@
         name: '灰塔门厅',
         intro: '塔门在身后合上。灰塔第一层仍残留着塔外冷雾。',
         map: [
-          'WWWWWWWWWWW', 'WPFFKmvYFUW', 'WFWFWWWFWFW', 'WFHFFTFFFFW', 'WWWFWFWFWWW',
-          'WAFmFFFDFFW', 'WFWFWWWFWFW', 'WFFFKFvvFFW', 'WFWFWWWFWFW', 'WFFFFHFFFFW', 'WWWWWWWWWWW'
+          'WWWWWWWWWWW',
+          'WPFFFFFmFFW',
+          'WFWWWFFFWFW',
+          'WFKFWTFFWzW',
+          'WFWFWFWWWFW',
+          'WFWFFFWFFFW',
+          'WFFAWWWFWWW',
+          'WFFHHvWFWFW',
+          'WFWWWmWFWDW',
+          'WFFFFFFFFUW',
+          'WWWWWWWWWWW'
         ],
         events: { '5,3': { title: '灰塔门厅的塔文', text: '墙面上刻着一句旧塔文：契约已成，门不再向外打开。你意识到，进入灰塔本身也是契约的一部分。', truth: 0, log: '灰塔不是普通建筑，它会记录进入者的选择。' } }
       },
@@ -974,8 +965,17 @@
         name: '回声兵营',
         intro: '第二层像一座废弃兵营。盔甲空壳在墙边低垂，像仍在等待命令。',
         map: [
-          'WWWWWWWWWWW', 'WEFFvFFKFFW', 'WFWFWWWFWFW', 'WFDFFTFFHFW', 'WFWFWzFWFWW',
-          'WFFKFFFYFUW', 'WWWFWFWWWFW', 'WFFFcFFFDFW', 'WFWFWWWFWFW', 'WFFFFHFFFFW', 'WWWWWWWWWWW'
+          'WWWWWWWWWWW',
+          'WEFFFFFFFUW',
+          'WFFFWHWWWKW',
+          'WFFFFTFFWDW',
+          'WFWFzWWFWFW',
+          'WFWFAFWFWFW',
+          'WmWWWHWFWWW',
+          'WFFFFFWFFFW',
+          'WFWWWFWFWFW',
+          'WFvmFFFFFFW',
+          'WWWWWWWWWWW'
         ],
         events: { '5,3': { title: '士兵尸体', text: '尸体背后有一道整齐的剑伤，不像怪物撕咬。士兵死前似乎试图爬向下层，而不是继续追击怪物。', truth: 1, log: '第一枚真相碎片：士兵可能不是死于魔物。' } }
       },
@@ -984,8 +984,17 @@
         name: '伪造寝室',
         intro: '第三层的房间像被故意摆成凶案现场。血迹、家具和破门方向互相矛盾。',
         map: [
-          'WWWWWWWWWWW', 'WEFFFYFFvFW', 'WFWFWWWFWFW', 'WFHFTzFFDFW', 'WWWFWFWFWWW',
-          'WAFKFFFYFUW', 'WFWFWWWFWFW', 'WFFFcFFFKFW', 'WFWFWWWFWFW', 'WFFFFHFFFFW', 'WWWWWWWWWWW'
+          'WWWWWWWWWWW',
+          'WEWmFFFFWFW',
+          'WFWFWWFAWFW',
+          'WFFFTzWFFFW',
+          'WFWWWFWWFFW',
+          'WFWFmDWFFFW',
+          'WFFFWWWHWWW',
+          'WFFFWHWFFFW',
+          'WFWWWKWFWYW',
+          'WUFFFFvFFFW',
+          'WWWWWWWWWWW'
         ],
         events: { '4,3': { title: '伪造现场', text: '床边的血迹是后来泼上去的，破门方向也不对。这里不是怪物袭击现场，而是有人想让它看起来像袭击现场。', truth: 1, log: '第二枚真相碎片：失踪现场被人为伪造。' } }
       },
@@ -994,8 +1003,17 @@
         name: '儿童涂鸦长廊',
         intro: '第四层的墙面画满儿童涂鸦。颜色已经褪去，但恐惧没有褪去。',
         map: [
-          'WWWWWWWWWWW', 'WEFFKFFvFFW', 'WFWFWWWFWFW', 'WFTFFmFFDFW', 'WWWFWFWFWWW',
-          'WAFzFFFYFUW', 'WFWFWWWFWFW', 'WFFFcFFFKFW', 'WFWFWWWFWFW', 'WFFFFHFFFFW', 'WWWWWWWWWWW'
+          'WWWWWWWWWWW',
+          'WEFFFFFFFKW',
+          'WFFFWHWFWFW',
+          'WFTFWmFFWFW',
+          'WWWFWWWFWYW',
+          'WFWFFFFFWmW',
+          'WzWWWWWFWFW',
+          'WFDFAFFFFFW',
+          'WFWWWFWFWWW',
+          'WFHFWFFUvFW',
+          'WWWWWWWWWWW'
         ],
         events: { '2,3': { title: '米娅的涂鸦', text: '画里有一个小女孩、一个哭泣的女人，以及一个披着领主斗篷的黑影。画上的怪物不是塔中魔物，而是一个人。', truth: 1, log: '第三枚真相碎片：米娅害怕的不是魔物，而是披着领主斗篷的人。' } }
       },
@@ -1004,8 +1022,17 @@
         name: '断誓桥',
         intro: '第五层中央是一座断桥。桥后站着一名没有面孔的守卫。',
         map: [
-          'WWWWWWWWWWW', 'WEFFKFFzFFW', 'WFWFWWWFWFW', 'WFTFFcFFHFW', 'WWWFWFWFWWW',
-          'WAFmFFFYoUW', 'WFWFWWWFWFW', 'WFFFvFFFKFW', 'WFWFWWWFWFW', 'WFFFFHFFFFW', 'WWWWWWWWWWW'
+          'WWWWWWWWWWW',
+          'WEFFFFFFFFW',
+          'WFWWWWWWFAW',
+          'WFTFWmFFFmW',
+          'WWFFWFWWFFW',
+          'WFKFWFWFFFW',
+          'WFWWWFWFFWW',
+          'WFHFFFWFFvW',
+          'WWWDWFWFFWW',
+          'WFFHFFWFoUW',
+          'WWWWWWWWWWW'
         ],
         events: { '2,3': { title: '染血家徽', text: '一枚染血家徽卡在砖缝中。徽记属于罗维克家族。它不该出现在塔内这么深的位置。', truth: 1, log: '第四枚真相碎片：罗维克早就进入过灰塔。' } }
       },
@@ -1014,8 +1041,17 @@
         name: '封印回廊',
         intro: '第六层的墙上刻满封印纹。你在其中看到了罗维克家族的法术签名。',
         map: [
-          'WWWWWWWWWWW', 'WEFFKFFvFFW', 'WFWFWWWFWFW', 'WFHFFTFFDFW', 'WWWFWFWFWWW',
-          'WAFzFFFYFUW', 'WFWFWWWFWFW', 'WFFFcFFFKFW', 'WFWFWWWFWFW', 'WFFFFHFFFFW', 'WWWWWWWWWWW'
+          'WWWWWWWWWWW',
+          'WEWFFFFFWvW',
+          'WFWWWFWFWcW',
+          'WFFFFTWFFFW',
+          'WFWWWWWWWFW',
+          'WFFFFYFFzFW',
+          'WFWFWWWWWWW',
+          'WFcHWKFKFFW',
+          'WFWWWFWWWAW',
+          'WFFFFUWFFDW',
+          'WWWWWWWWWWW'
         ],
         events: { '5,3': { title: '罗维克的法术印记', text: '封印边缘残留着罗维克家族的法术印记。它不是被迫留下的，而是主动开启封印时烙下的。', truth: 1, log: '第五枚真相碎片：罗维克曾主动打开灰塔封印。' } }
       },
@@ -1024,8 +1060,17 @@
         name: '伊莲密室',
         intro: '第七层藏着一间小密室。门缝里夹着几页被血浸透的日记。',
         map: [
-          'WWWWWWWWWWW', 'WEFFKFFzFFW', 'WFWFWWWFWFW', 'WFTFFcFFHFW', 'WWWFWFWFWWW',
-          'WAFmFFFYFUW', 'WFWFWWWFWFW', 'WFFFvFFFKFW', 'WFWFWWWFWFW', 'WFFFFHFFFFW', 'WWWWWWWWWWW'
+          'WWWWWWWWWWW',
+          'WEFFFFFFFFW',
+          'WFWzWWWFcFW',
+          'WFTFFFFFWFW',
+          'WFFWWWWWFFW',
+          'WFWvFFHFWFW',
+          'WAWYFFWKWFW',
+          'WFWFWFWFDFW',
+          'WFcFWFWWWFW',
+          'WFFKWFFFFUW',
+          'WWWWWWWWWWW'
         ],
         events: { '2,3': { title: '伊莲日记', text: '如果有人读到这里，请不要相信罗维克。我不是被塔抓走。我带着米娅逃进来，是因为塔外更危险。', truth: 1, log: '第六枚真相碎片：伊莲和米娅是主动逃进灰塔。' } }
       },
@@ -1034,8 +1079,17 @@
         name: '忏悔钟室',
         intro: '第八层悬着一口黑钟。钟声会唤醒记忆，也会唤醒守卫记忆的怪物。',
         map: [
-          'WWWWWWWWWWW', 'WEFFvFFKFFW', 'WFWFWWWFWFW', 'WFDFFCFFHFW', 'WFWFWzFWFWW',
-          'WFFKFFFYFUW', 'WWWFWFWWWFW', 'WFFFcFFFDFW', 'WFWFWWWFWFW', 'WFFFFHFFFFW', 'WWWWWWWWWWW'
+          'WWWWWWWWWWW',
+          'WEFFFFFFFUW',
+          'WFzKWFWFWFW',
+          'WFcFWFWFWFW',
+          'WFWFWcWFWAW',
+          'WFFFFCWFWFW',
+          'WFWWWWWFWDW',
+          'WFFKWFvFWFW',
+          'WYWWWFWWWFW',
+          'WHFFFFFFFFW',
+          'WWWWWWWWWWW'
         ],
         events: {}
       },
@@ -1044,8 +1098,17 @@
         name: '逃亡阶梯',
         intro: '第九层的门只能向前开启。这里记录的不是战斗，而是一场无法回头的逃亡。',
         map: [
-          'WWWWWWWWWWW', 'WEFFKGGzFFW', 'WFWFWWWFWFW', 'WFHFFcFFDFW', 'WWWFWFWFWWW',
-          'WAFmFFFYFUW', 'WFWFWWWFWFW', 'WFFFvFFFKFW', 'WFWFWWWFWFW', 'WFFFFHFFFFW', 'WWWWWWWWWWW'
+          'WWWWWWWWWWW',
+          'WEFFGGFFcFW',
+          'WFWWWWWFWWW',
+          'WFWFFFWzFFW',
+          'WFWFWFWvWFW',
+          'WFWFWFKAFYW',
+          'WFWFFWWHWFW',
+          'WFWFWFFFWFW',
+          'WFWDWcWFWFW',
+          'WUFFWKWFFFW',
+          'WWWWWWWWWWW'
         ],
         events: {}
       },
@@ -1054,8 +1117,17 @@
         name: '记忆审判厅',
         intro: '第十层是一座审判厅。王座上坐着罗维克年轻时的幻影，盔甲仍然明亮。',
         map: [
-          'WWWWWWWWWWW', 'WEFFKFFzFFW', 'WFWFWWWFWFW', 'WFTFFcFFHFW', 'WWWFWFWFWWW',
-          'WAFmFFFYpUW', 'WFWFWWWFWFW', 'WFFFvFFFKFW', 'WFWFWWWFWFW', 'WFFFFHFFFFW', 'WWWWWWWWWWW'
+          'WWWWWWWWWWW',
+          'WEFFFFWzHFW',
+          'WFWWWFWWWFW',
+          'WFTFDFWFFFW',
+          'WFWFFWWFWKW',
+          'WFWFWAFFWFW',
+          'WFWcWFWKWWW',
+          'WFFFWvWFFFW',
+          'WFWWWWWWWWW',
+          'WFFFFFFFpUW',
+          'WWWWWWWWWWW'
         ],
         events: { '2,3': { title: '断裂契约纸', text: '契约纸上写着：以未见天日之子，换取灰鸦镇的统治权。签名处是罗维克。', truth: 1, log: '第七枚真相碎片：罗维克曾以未出生的孩子作为契约代价。' } }
       }
@@ -1065,8 +1137,17 @@
         name: '弃婴摇篮',
         intro: '第十一层摆满空摇篮。你第一次听见灰婴的哭声。',
         map: [
-          'WWWWWWWWWWW', 'WEFFKFFwFFW', 'WFWFWWWFWFW', 'WFVFFTFFDFW', 'WWWFWFWFWWW',
-          'WAFzFFFYFUW', 'WFWFWWWFWFW', 'WFFFcFFFVFW', 'WFWFWWWFWFW', 'WFFFFHFFFFW', 'WWWWWWWWWWW'
+          'WWWWWWWWWWW',
+          'WEFFFFFFFFW',
+          'WFWFWWWWWFW',
+          'WFFFFTKFWFW',
+          'WFWWWYWWWFW',
+          'WFFFFFWFFFW',
+          'WWAWWFWwFFW',
+          'WFFrFFWFWUW',
+          'WVWHWFWzWFW',
+          'WDWFFcFFWFW',
+          'WWWWWWWWWWW'
         ],
         events: { '5,3': { title: '摇篮里的哭声', text: '你听见一个孩子在门后哭：父亲……为什么门这么冷？那声音不像怪物，更像没有出生的怨念。', truth: 1, log: '第八枚真相碎片：灰婴并不是普通魔物，而是未出生孩子的怨念。' } }
       },
@@ -1075,8 +1156,17 @@
         name: '灰雾育房',
         intro: '第十二层的血瓶被灰雾浸透。它们能救命，也会留下罪痕。',
         map: [
-          'WWWWWWWWWWW', 'WEFFwFFKFFW', 'WFWFWWWFWFW', 'WFDFFJFFVFW', 'WFWFWrFWFWW',
-          'WFFKFFFYFUW', 'WWWFWFWWWFW', 'WFFFcFFFDFW', 'WFWFWWWFWFW', 'WFFFFVFFFFW', 'WWWWWWWWWWW'
+          'WWWWWWWWWWW',
+          'WEFFFFFFFFW',
+          'WFFFFFWFFwW',
+          'WFFFFJWFVFW',
+          'WFWWWFWFWFW',
+          'WFcYWFKFrFW',
+          'WFWFWFWFFWW',
+          'WDWFWFWVFFW',
+          'WzWFWFWWWFW',
+          'WFWFVUFHFAW',
+          'WWWWWWWWWWW'
         ],
         events: {}
       },
@@ -1085,8 +1175,17 @@
         name: '无声哭室',
         intro: '第十三层没有普通残魂，只有断断续续的哭声在墙内移动。',
         map: [
-          'WWWWWWWWWWW', 'WEFFFYFFwFW', 'WFWFWWWFWFW', 'WFVFTzFFDFW', 'WWWFWFWFWWW',
-          'WAFKFFFYFUW', 'WFWFWWWFWFW', 'WFFFrFFFKFW', 'WFWFWWWFWFW', 'WFFFFVFFFFW', 'WWWWWWWWWWW'
+          'WWWWWWWWWWW',
+          'WEFFFFFFFFW',
+          'WFWKWcFFWFW',
+          'WFFFTFWrWFW',
+          'WWFFWFWFWFW',
+          'WFFFWHFFWFW',
+          'WFFWWzWWWFW',
+          'WFFwWYFFWFW',
+          'WWWFWFWFWFW',
+          'WVFFDAWFFUW',
+          'WWWWWWWWWWW'
         ],
         events: { '4,3': { title: '无声的哭室', text: '哭声没有要求你复仇。它只是不断重复：我也想回家。', truth: 1, log: '第九枚真相碎片：灰婴仍保留着被承认、被带回家的愿望。' } }
       },
@@ -1095,8 +1194,17 @@
         name: '契约胎室',
         intro: '第十四层的中心悬着一枚灰色胎茧。它注视着你，却没有真正的眼睛。',
         map: [
-          'WWWWWWWWWWW', 'WEFFKFFwFFW', 'WFWFWWWFWFW', 'WFVFFJFFHFW', 'WWWFWFWFWWW',
-          'WAFmFFFYQUW', 'WFWFWWWFWFW', 'WFFFrFFFKFW', 'WFWFWWWFWFW', 'WFFFFVFFFFW', 'WWWWWWWWWWW'
+          'WWWWWWWWWWW',
+          'WEFVFFWFFFW',
+          'WFFWWFWFWFW',
+          'WFFFWwWrWzW',
+          'WFWWWFWWWFW',
+          'WFFFFFWFHFW',
+          'WFWWWWWFFFW',
+          'WFWFFAFKWDW',
+          'WFWWWFWWWWW',
+          'WFFFFFFFQUW',
+          'WWWWWWWWWWW'
         ],
         events: {}
       }
@@ -1107,8 +1215,17 @@
         name: '红线长廊',
         intro: '第十五层的门被红线连接。开启一条路，就会封死另一条路。',
         map: [
-          'WWWWWWWWWWW', 'WEFFKFFuFFW', 'WFWFWWWFWFW', 'WFHFFZFFDFW', 'WFWFWkFWFWW',
-          'WFFKZZFYFUW', 'WWWFWFWWWFW', 'WFFFuFFFDFW', 'WFWFWWWFWFW', 'WFFFFHFFFFW', 'WWWWWWWWWWW'
+          'WWWWWWWWWWW',
+          'WEFFFFWKFFW',
+          'WFWYFFWFWWW',
+          'WFFuFZFAFFW',
+          'WFWHFFWFWFW',
+          'WFFFZZWFWFW',
+          'WFWWWFWWWFW',
+          'WFFDWFWHFFW',
+          'WFWFWFWFWkW',
+          'WUWkFuFFWFW',
+          'WWWWWWWWWWW'
         ],
         events: {}
       },
@@ -1117,8 +1234,17 @@
         name: '孤儿祈祷室',
         intro: '第十六层里传来孩子们的低声祈祷。他们不是委托目标，却同样被困在塔里。',
         map: [
-          'WWWWWWWWWWW', 'WEFFuFFKFFW', 'WFWFWWWFWFW', 'WFLFFuFFDFW', 'WFWFWkFWFWW',
-          'WFFKFFFYFUW', 'WWWFWFWWWFW', 'WFFFuFFFDFW', 'WFWFWWWFWFW', 'WFFFFHFFFFW', 'WWWWWWWWWWW'
+          'WWWWWWWWWWW',
+          'WEHFFFWFkuW',
+          'WFWWWFWFFWW',
+          'WFLFWAWFFFW',
+          'WFFFWFWuWFW',
+          'WFWFWFWFWFW',
+          'WFWWWFWWWFW',
+          'WFFFWFHFFDW',
+          'WFWkWWWFKFW',
+          'WFFFFFFUYFW',
+          'WWWWWWWWWWW'
         ],
         events: {}
       },
@@ -1127,8 +1253,17 @@
         name: '三姥宴厅',
         intro: '第十七层摆着一张长桌。骨姥、血姥、梦姥坐在桌边，像早已等候多时。',
         map: [
-          'WWWWWWWWWWW', 'WEFFKFFkFFW', 'WFWFWWWFWFW', 'WFTFFTFTHFW', 'WWWFWFWFWWW',
-          'WAFuFFFYFUW', 'WFWFWWWFWFW', 'WFFFkFFFKFW', 'WFWFWWWFWFW', 'WFFFFHFFFFW', 'WWWWWWWWWWW'
+          'WWWWWWWWWWW',
+          'WEFFFFFFFDW',
+          'WFWWWFWWFFW',
+          'WFTFFTWFTFW',
+          'WFWFFHWkWFW',
+          'WFWFFFWYWFW',
+          'WFWWWWWFWWW',
+          'WFFFFFFFFUW',
+          'WWHuWWWWWkW',
+          'WAFFFFKuFFW',
+          'WWWWWWWWWWW'
         ],
         events: {
           '2,3': { title: '骨姥的祝福', text: '骨姥低声说：死人不会责怪你，活人才会。她赐予你骨盾。', truth: 0, blessing: 'bone', log: '骨姥祝福：防御提升，但罪痕增加。' },
@@ -1141,8 +1276,17 @@
         name: '红线梦境',
         intro: '第十八层没有墙，只有红线。伊莲、米娅和孤儿的影子被吊在不同方向。',
         map: [
-          'WWWWWWWWWWW', 'WEFFKFFuFFW', 'WFWFWWWFWFW', 'WFHFFkFFDFW', 'WWWFWFWFWWW',
-          'WAFuFFFYXUW', 'WFWFWWWFWFW', 'WFFFkFFFKFW', 'WFWFWWWFWFW', 'WFFFFHFFFFW', 'WWWWWWWWWWW'
+          'WWWWWWWWWWW',
+          'WEFFWFWFFFW',
+          'WFWAWFuFWuW',
+          'WFWFWFFFFFW',
+          'WFWFWDWWWFW',
+          'WFFKWFWFFFW',
+          'WFFFWWWHWFW',
+          'WFFFkFFFWHW',
+          'WFWWWWWWWWW',
+          'WFFFFFFFXUW',
+          'WWWWWWWWWWW'
         ],
         events: {}
       }
@@ -1153,8 +1297,17 @@
         name: '后果回廊',
         intro: '第十九层没有新的选择，只有旧选择留下的痕迹。',
         map: [
-          'WWWWWWWWWWW', 'WEFFBFFuFFW', 'WFWFWWWFWFW', 'WFBFFkFFDFW', 'WWWFWFWFWWW',
-          'WAFuFFFYFUW', 'WFWFWWWFWFW', 'WFFFkFFFBFW', 'WFWFWWWFWFW', 'WFFFFHFFFFW', 'WWWWWWWWWWW'
+          'WWWWWWWWWWW',
+          'WEFFFFFFFFW',
+          'WWFWWWWWFFW',
+          'WKFFFkFFFFW',
+          'WWFWWkWFFFW',
+          'WFDFFFWHFFW',
+          'WuWuWFWWFFW',
+          'WFWFFFWFFFW',
+          'WFWWWWFHWFW',
+          'WAYFFFFFFUW',
+          'WWWWWWWWWWW'
         ],
         events: {}
       },
@@ -1163,8 +1316,17 @@
         name: '灰塔断层',
         intro: '第二十层是灰塔断层。塔不再询问你要选择什么，只要求你面对选择的后果。',
         map: [
-          'WWWWWWWWWWW', 'WEFFKFFkFFW', 'WFWFWWWFWFW', 'WFHFFkFFDFW', 'WWWFWFWFWWW',
-          'WAFuFFFYfUW', 'WFWFWWWFWFW', 'WFFFkFFFKFW', 'WFWFWWWFWFW', 'WFFFFHFFFFW', 'WWWWWWWWWWW'
+          'WWWWWWWWWWW',
+          'WEWFWFFFFFW',
+          'WFWHWFWWWHW',
+          'WFWFFKWFFFW',
+          'WFWWWFWFWWW',
+          'WFFFFDWFFFW',
+          'WFWuWFWkWFW',
+          'WFAFFFWFWuW',
+          'WFWFWFWWWWW',
+          'WFFFFFFFfUW',
+          'WWWWWWWWWWW'
         ],
         events: {}
       }
@@ -1233,11 +1395,13 @@
 
       addLog('你踏入灰塔。身后的塔门缓缓合上。', 'info');
       addLog('触屏自动寻路已启用：点击地图任意可达格子即可移动。', 'info');
-      addLog('单屏布局已启用：地图占主屏，底部小图标按钮。', 'info');
+      addLog('目标信息和操作反馈会在地图右上角滚动显示并自动消失。', 'info');
+      addLog('20 层地图已重做为不同迷宫结构。', 'info');
+      addLog('手机布局已启用：顶部状态栏、地图放大、底部核心按钮。', 'info');
       addLog(`当前版本：${GAME_VERSION}`, 'info');
       enterFloor(0, { x: 1, y: 1 });
       render();
-      showOpeningAsFloat();
+      showModal('灰塔之外', '<p>灰塔之外，雾色如铁。</p><p>领主罗维克跪在塔门前，手中攥着一枚烧焦的儿童发饰。</p><p>“找回我的妻子和女儿。”</p><p>你踏入灰塔。身后的塔门缓缓合上。</p>');
     }
 
     function currentFloor() {
@@ -1264,28 +1428,6 @@
       while (feed.children.length > 6) feed.lastElementChild.remove();
       setTimeout(() => item.classList.add('leaving'), Math.max(600, ttl - 450));
       setTimeout(() => item.remove(), ttl);
-    }
-
-
-    function showNewbieGuide() {
-      const tips = [
-        '<b>新手指引 1/5</b><br>点击地图上的任意可达格子，角色会自动寻路移动。',
-        '<b>新手指引 2/5</b><br>左上角是常驻属性栏：HP、攻、防、钥匙、金币、真相和罪痕。',
-        '<b>新手指引 3/5</b><br>点到怪物会先显示预计损血；危险战斗会弹出确认。',
-        '<b>新手指引 4/5</b><br>右上角会显示目标信息、战斗反馈和剧情提示，几秒后自动消失。',
-        '<b>新手指引 5/5</b><br>怪物手册、剧情日志常驻；读取、重开、说明和自检都在“设置”里。'
-      ];
-      tips.forEach((tip, i) => setTimeout(() => pushFloatHTML(tip, 'guide', 5200), 450 + i * 850));
-    }
-
-    function showOpeningAsFloat() {
-      setTimeout(() => {
-        pushFloatHTML('<b>灰塔之外</b><br>雾色如铁。罗维克跪在塔门前，请求你找回妻子和女儿。', 'info', 5600);
-      }, 120);
-      setTimeout(() => {
-        pushFloatHTML('<b>塔门关闭</b><br>你踏入灰塔。身后的塔门缓缓合上。', 'info', 5600);
-      }, 900);
-      showNewbieGuide();
     }
 
     function render() {
@@ -1418,24 +1560,14 @@
         <div class="stat"><span>${k}</span><b>${v}</b></div>
       `).join('');
 
-      const hud = document.getElementById('statsOverlay');
-      if (hud) {
-        const hudHpPercent = Math.max(3, Math.min(100, Math.round((p.hp / 6500) * 100)));
-        hud.innerHTML = `
-          <div class="hud-title"><span>玩家属性</span><span>${currentFloor().id}F · ${escapeHTML(currentFloor().name)}</span></div>
-          <div class="hud-hp-row"><span>HP</span><b>${p.hp}</b></div>
-          <div class="hud-hpbar"><div class="hud-hpbar-fill" style="width:${hudHpPercent}%"></div></div>
-          <div class="hud-grid">
-            <div>攻 <b>${p.atk}</b></div>
-            <div>防 <b>${p.def}</b></div>
-            <div>钥 <b>${p.yellowKeys}</b></div>
-            <div>金 <b>${p.gold}</b></div>
-            <div>经 <b>${p.exp}</b></div>
-            <div>真 <b>${p.truthFragments || 0}</b></div>
-            <div>罪 <b>${p.sin || 0}</b></div>
-            <div>圣水 <b>${p.holyWater || 0}</b></div>
-            <div>杀 <b>${p.kills}</b></div>
-          </div>
+      const mobileHud = document.getElementById('mobileHud');
+      if (mobileHud) {
+        mobileHud.innerHTML = `
+          <div class="mobile-chip floor">层数<b>${currentFloor().id}F</b></div>
+          <div class="mobile-chip hp">生命<b>${p.hp}</b></div>
+          <div class="mobile-chip">攻击<b>${p.atk}</b></div>
+          <div class="mobile-chip">防御<b>${p.def}</b></div>
+          <div class="mobile-chip key">钥匙<b>${p.yellowKeys}</b></div>
         `;
       }
     }
@@ -2499,9 +2631,8 @@
       add('主界面按钮精简', !!document.getElementById('settingsBtn') && document.querySelectorAll('.primary-actions > .action-btn:not(.utility-hidden)').length <= 4, '低频按钮已集中到设置弹窗');
       add('触屏自动寻路', typeof findAutoPath === 'function' && typeof startAutoMoveTo === 'function', '点击地图任意可达点可自动移动');
       add('浮动提示 UI', !!document.getElementById('floatingFeed') && typeof pushFloatHTML === 'function', '目标信息和操作反馈在地图右上角滚动显示并自动消失');
-      add('地图左上角属性 HUD', !!document.getElementById('statsOverlay'), '玩家属性已固定到地图左上角');
-      add('右上角新手指引', typeof showNewbieGuide === 'function', '新手指引已接入右上角浮动提示流');
-      add('单屏小图标布局', document.querySelectorAll('.primary-actions > .action-btn:not(.utility-hidden)').length <= 4, '主屏按钮已压缩成底部小图标');
+      add('迷宫地图优化', GAME_VERSION.includes('maze') || GAME_VERSION.includes('mobile'), '20 层地图已替换为差异化迷宫结构');
+      add('手机布局优化', !!document.getElementById('mobileHud'), '移动端顶部 HUD、放大地图与底部核心操作栏已加载');
       let storageOk = false;
       try {
         localStorage.setItem('__gray_tower_test__', '1');
@@ -2736,7 +2867,7 @@
         bind('settingsFinalCheckBtn', () => { hideModal(); showFinalCheck(); });
         bind('settingsHelpBtn', () => {
           hideModal();
-          showModal('玩法说明', '<p>目标是探索 20 层灰塔，完成关键选择并抵达结局。</p><p>触屏操作：点击地图任意可达格子，角色会自动寻路移动过去；遇到危险战斗会先确认。</p><p>单屏布局：地图占主屏，底部是小图标按钮；玩家属性在左上角，提示在右上角。</p>');
+          showModal('玩法说明', '<p>目标是探索 20 层灰塔，完成关键选择并抵达结局。</p><p>触屏操作：点击地图任意可达格子，角色会自动寻路移动过去；遇到危险战斗会先确认。</p><p>手机端顶部显示核心状态，地图居中放大，底部只保留核心按钮；目标信息和操作反馈在地图右上角浮动。</p>');
         });
         bind('settingsFormulaBtn', () => {
           hideModal();
